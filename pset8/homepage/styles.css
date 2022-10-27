@@ -1,0 +1,53 @@
+
+.selector-for-some-widget
+{
+    box-sizing: content-box;
+}
+
+body
+{
+    text-align: center;
+    max-width: 800px;
+
+    margin: 20px auto;
+}
+
+main
+{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+p
+{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+button.bg
+{
+    background: none;
+    border: none;
+}
+
+.navbar
+{
+    border-radius: 15px;
+}
+
+h2, h3
+{
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+hr
+{
+    background-color: grey;
+}
+
+.post-list
+{
+    list-style-type: none;
+}

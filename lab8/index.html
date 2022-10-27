@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function submi() {
+                let ans = document.querySelector('#answer1').value;
+                if (ans.toLowerCase() == 'aconcagua')
+                {
+                    document.querySelector('#answer1').style.backgroundColor = 'green';
+                    document.querySelector('#answer1').style.color = 'white';
+                    document.querySelector('#response').innerHTML = 'Correct!';
+                }
+                else
+                {
+                    document.querySelector('#answer1').style.backgroundColor = 'red';
+                    document.querySelector('#answer1').style.color = 'white';
+                    document.querySelector('#response').innerHTML = 'Incorrect.';
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What do you get if you multiply six by nine?</h3>
+                <h4 id="answer"></h4>
+                <form id="buttons">
+                    <button type="button" id="b2">42</button>
+                    <button type="button" id="b1">48</button>
+                    <button type="button" id="b3">54</button>
+
+                    <script>
+
+                        let b1 = document.querySelector('#b1');
+                        let b2 = document.querySelector('#b2');
+                        let b3 = document.querySelector('#b3');
+                        let buttons = document.querySelectorAll('button');
+
+                        function change()
+                        {
+                            b1.style.backgroundColor = 'red';
+                            b2.style.backgroundColor = 'green';
+                            b3.style.backgroundColor = 'red';
+                            for (let i = 0; i < buttons.length; i++)
+                            {
+                                buttons[i].style.color = 'white';
+                            }
+                        }
+
+                        document.querySelector('#b1').onclick = function() {
+                            document.querySelector('#answer').innerHTML = 'Incorrect.';
+                            change();
+                        };
+
+                        document.querySelector('#b2').onclick = function() {
+                            document.querySelector('#answer').innerHTML = 'Correct!';
+                            change();
+                        };
+
+                        document.querySelector('#b3').onclick = function() {
+                            document.querySelector('#answer').innerHTML = 'Incorrect.';
+                            change()
+                        };
+
+                    </script>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of the tallest mountain in South America?</h3>
+                <h4 id="response"></h4>
+                <form id="hello">
+                    <input placeholder="Answer" id="answer1" autocomplete="off">
+                    <button type="button" id="hello" onclick="submi()">Submit</button>
+                </form>
+                <script>
+
+
+                </script>
+
+            </div>
+
+        </div>
+    </body>
+</html>

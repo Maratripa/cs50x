@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Shares</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            {% for i in transactions %}
+                {% if i.transaction_type == 'SELL' %}
+                    <tr style="background-color: #2e944b;">
+                        <td>{{ i.transaction_type }}</td>
+                        <td>{{ i.symbol }}</td>
+                        <td>{{ i.transaction_price | usd }}</td>
+                        <td>{{ i.shares }}</td>
+                        <td>{{ i.date }}</td>
+                    </tr>
+                {% else %}
+                    <tr style="background-color: #ea433b;">
+                        <td>{{ i.transaction_type }}</td>
+                        <td>{{ i.symbol }}</td>
+                        <td>{{ i.transaction_price | usd }}</td>
+                        <td>{{ i.shares }}</td>
+                        <td>{{ i.date }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

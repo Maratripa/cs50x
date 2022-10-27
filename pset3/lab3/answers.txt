@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: With process of elimination, this is bubble sort, but it can be obtained through looking at the time it took with a reversed list, which shows the "Big O" of n squared.
+
+sort2 uses: Merge Sort
+
+How do you know?: This script took the shortest with a reversed list, meaning that the other two are the "Big O's" of n squared. Eliminating the other two scripts as merge sort, this is it.
+
+sort3 uses: Selection Sort
+
+How do you know?: It was always the slowest one to sort a sorted list of numbers. The sorted list provides a good example of the "omega" times.

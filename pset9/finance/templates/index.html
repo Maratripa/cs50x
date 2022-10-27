@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        {% for i in socks %}
+        <tr>
+            <td>{{ i.symbol }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.shares }}</td>
+            <td>{{ i.price | usd }}</td>
+            <td>{{ i.total | usd }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <table class="table">
+        <tr>
+            <th>Cash</th>
+            <td>{{ cash | usd }}</td>
+        </tr>
+        <tr>
+            <th>TOTAL</th>
+            <td>{{ total_money | usd }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
